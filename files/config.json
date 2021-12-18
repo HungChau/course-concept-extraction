@@ -1,0 +1,42 @@
+{
+    "BertModel":
+    { 
+        "Uncased":
+        {
+            "IIR": "HungChau/distilbert-base-uncased-concept-extraction-iir-v1.2",
+            "Kp20k": "HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2",
+            "Wikipedia": "HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2"
+        },
+        "Cased":
+        {
+            "IIR": "HungChau/distilbert-base-cased-concept-extraction-iir-v1.2",
+            "Kp20k": "HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2",
+            "Wikipedia": "HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2"
+        }
+    },
+    "BiLSTMModel":
+    {
+        "ModelName":
+        {
+            "IIRUncased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-iir-caseless-cwlm_lstm_crf.model",
+            "IIRCased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-iir-case-cwlm_lstm_crf.model",
+            "Kp20kUnCased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.model",
+            "Kp20kCased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-kp20k-case-cwlm_lstm_crf.model",
+            "WikipediaUncased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-wikipedia-caseless-cwlm_lstm_crf.model",             
+            "WikipediaCased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-wikipedia-case-cwlm_lstm_crf.model"
+        },
+        "ModelArgument":
+        {
+            "IIRUncased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-iir-caseless-cwlm_lstm_crf.json",
+            "IIRCased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-iir-case-cwlm_lstm_crf.json",
+            "Kp20kUnCased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.json",
+            "Kp20kCased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-kp20k-case-cwlm_lstm_crf.json",
+            "WikipediaUncased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-wikipedia-caseless-cwlm_lstm_crf.json",           
+            "WikipediaCased": "/bgfs/mrfrank/hung/checkpoint/bi-lstm-crf-wikipedia-case-cwlm_lstm_crf.json"
+        }
+    },
+    "NERModel":
+    {
+        "Path": "dslim/bert-base-NER"
+    }
+}
