@@ -1,2 +1,3 @@
 # Python Notebook files
 *.ipynb
+.ipynb_checkpoints/
