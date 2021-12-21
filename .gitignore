@@ -1,4 +1,3 @@
 # Python Notebook files
 *.ipynb
 .ipynb_checkpoints/
-outputs/output.txt
