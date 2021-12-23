@@ -1,0 +1,5 @@
+Required libraries:
+Python 3
+Pandas (pip3 install pandas)
+sklearn
+torch (pip3 install torch)
