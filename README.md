@@ -1,4 +1,4 @@
-# course-concept-extraction
+# Concept Extraction for Course Description
 
 This project provides a concept extractor for course descriptions taught in college. The current trained models mainly focus on courses in computer science and information science domains. The extraction models were trained with weak labels from public resources such as IIR dataset, KP20 dataset or Wikipedia.
 
@@ -21,5 +21,16 @@ Install the following required libraries:
 ## Data
 
 ## Usage
+Config file (files/config.json): you can provide paths to the pretrained models you want to use.
+
+We provide several scripts. The usages of these scripts can be accessed by the parameter -h, i.e.,
+```
+python predict.py -h
+python predict_txt.py -h
+```
 
 ## Prediction
+```predict.py``` is provided to extract concepts from a text (a sequence of words). A running command example is provided below:
+```
+python predict.py --input_text "Machine learning is an important subject in Computer Science."
+```
