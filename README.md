@@ -11,7 +11,12 @@ This project provides a concept extractor for course descriptions taught in coll
 - [Prediction](#prediction)
 
 ## Model
+
+BERT architecture adaption for concept extraction 
+
 <p align="center"><img width="100%" src="docs/bert_CE.png"/></p>
+
+Bi-LSTM-CRF architecture adaption for concept extraction 
 
 <p align="center"><img width="100%" src="docs/bilstm_CE.png"/></p>
 
