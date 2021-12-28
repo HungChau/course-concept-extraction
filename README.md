@@ -11,6 +11,9 @@ This project provides a concept extractor for course descriptions taught in coll
 - [Prediction](#prediction)
 
 ## Model
+<p align="center"><img width="100%" src="docs/bert_CE.png"/></p>
+
+<p align="center"><img width="100%" src="docs/bilstm_CE.png"/></p>
 
 ## Installation
 Install the following required libraries:
