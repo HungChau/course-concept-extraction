@@ -71,7 +71,7 @@ It will take some time to load the models. To extract concepts from multiple doc
 ```
 python predict.py --input_text "Machine learning is an important subject in Computer Science." --output_file outputs/output.txt
 ```
-The corresponding output follows the format: "doc_id"<tab><list_of_concepts>
+The corresponding output follows the format: "doc_id"\<tab>\<list_of_concepts>
 ```
 doc_id	['Computer Science', 'Machine learning']
 ```
@@ -83,7 +83,7 @@ doc_id	['Computer Science', 'Machine learning']
 python predict_txt.py --input_file data/sample/input_sample.txt --output_file outputs/output.txt
 ```
 
-The corresponding output follows the format: <doc_id><tab><list_of_concepts>
+The corresponding output follows the format: <doc_id>\<tab>\<list_of_concepts>
 ```
 000001	['data structures', 'queues', 'stacks', 'reference variables', 'trees', 'programming techniques', 'dynamic memory allocation', 'complexity', 'searching', 'recursion', 'java language', 'algorithms', 'computer science', 'sorting methods', 'lists']
 000002	['relational/SQL', 'data management', 'RDF/SPARQL', 'data stream processing approaches', 'data mining', 'data analysis topics', 'data management paradigms', 'data analysis techniques', 'XML/Xquery', 'information retrieval', 'big data processing techniques', 'map/reduce framework', 'NOSQL', 'data management techniques', 'data warehousing', 'class', 'data manipulation', 'network analysis']
