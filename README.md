@@ -16,8 +16,8 @@ BERT architecture adaption for concept extraction
 
 <p align="center"><img width="50%" src="docs/bert_CE.png"/></p>
 
-- Pretrained BERT-based models stored on [Hugging Face account](https://huggingface.co/HungChau):
-    - Uncased model trained with IIR dataset: HungChau/distilbert-base-uncased-concept-extraction-iir-v1.2
+- Pretrained BERT-based models stored on [Hugging Face account](https://huggingface.co/HungChau): specify the models you want to use in the config file (files/config.json). When running a prediction script the first time, it will automatically download to your local machine.
+    - Uncased model trained with IIR dataset: ```HungChau/distilbert-base-uncased-concept-extraction-iir-v1.2```
     - Cased model trained with IIR dataset: HungChau/distilbert-base-cased-concept-extraction-iir-v1.2
     - Uncased model trained with KP20K dataset: HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2
     - Cased model trained with KP20K dataset: HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2
