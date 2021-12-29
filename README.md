@@ -63,13 +63,15 @@ python predict_txt.py -h
 ```
 
 ## Prediction
+It will take some time to load the models. To extract concepts from multiple documents, the best practice is to input a text file and run the second script ``predict_txt.py``.
+
 - Input as a string
 
 ```predict.py``` is provided to extract concepts from a direct text (a sequence of words). A running command example is provided below:
 ```
 python predict.py --input_text "Machine learning is an important subject in Computer Science." --output_file outputs/output.txt
 ```
-The corresponding output follows the format: <list_of_concepts>
+The corresponding output follows the format: "doc_id"<tab><list_of_concepts>
 ```
 doc_id	['Computer Science', 'Machine learning']
 ```
