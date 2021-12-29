@@ -14,7 +14,7 @@ This project provides a concept extractor for course descriptions taught in coll
 
 BERT architecture adaption for concept extraction 
 
-<p align="center"><img width="70%" src="docs/bert_CE.png"/></p>
+<p align="center"><img width="50%" src="docs/bert_CE.png"/></p>
 
 Bi-LSTM-CRF architecture adaption for concept extraction 
 
