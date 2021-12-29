@@ -64,6 +64,7 @@ python predict_txt.py -h
 
 ## Prediction
 - Input as a string
+
 ```predict.py``` is provided to extract concepts from a direct text (a sequence of words). A running command example is provided below:
 ```
 python predict.py --input_text "Machine learning is an important subject in Computer Science." --output_file outputs/output.txt
@@ -74,6 +75,7 @@ doc_id	['Computer Science', 'Machine learning']
 ```
 
 - Input as a text file (described in [Data](#data) section)
+
 ```predict_txt.py``` is provided to extract concepts from a text file (for multiple documents). A running command example is provided below:
 ```
 python predict_txt.py --input_file data/sample/input_sample.txt --output_file outputs/output.txt
