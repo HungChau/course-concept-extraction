@@ -18,21 +18,21 @@
     {
         "ModelName":
         {
-            "IIRUncased": "checkpoints/bi-lstm-crf-iir-caseless-cwlm_lstm_crf.model",
-            "IIRCased": "checkpoints/bi-lstm-crf-iir-case-cwlm_lstm_crf.model",
-            "Kp20kUnCased": "checkpoints/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.model",
-            "Kp20kCased": "checkpoints/bi-lstm-crf-kp20k-case-cwlm_lstm_crf.model",
-            "WikipediaUncased": "checkpoints/bi-lstm-crf-wikipedia-caseless-cwlm_lstm_crf.model",             
-            "WikipediaCased": "checkpoints/bi-lstm-crf-wikipedia-case-cwlm_lstm_crf.model"
+            "IIRUncased": "bilstm-checkpoints/bi-lstm-crf-iir-caseless-cwlm_lstm_crf.model",
+            "IIRCased": "bilstm-checkpoints/bi-lstm-crf-iir-case-cwlm_lstm_crf.model",
+            "Kp20kUnCased": "checkbilstm-checkpointspoints/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.model",
+            "Kp20kCased": "bilstm-checkpoints/bi-lstm-crf-kp20k-case-cwlm_lstm_crf.model",
+            "WikipediaUncased": "bilstm-checkpoints/bi-lstm-crf-wikipedia-caseless-cwlm_lstm_crf.model",             
+            "WikipediaCased": "bilstm-checkpoints/bi-lstm-crf-wikipedia-case-cwlm_lstm_crf.model"
         },
         "ModelArgument":
         {
-            "IIRUncased": "checkpoints/bi-lstm-crf-iir-caseless-cwlm_lstm_crf.json",
-            "IIRCased": "checkpoints/bi-lstm-crf-iir-case-cwlm_lstm_crf.json",
-            "Kp20kUnCased": "checkpoints/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.json",
-            "Kp20kCased": "checkpoints/bi-lstm-crf-kp20k-case-cwlm_lstm_crf.json",
-            "WikipediaUncased": "checkpoints/bi-lstm-crf-wikipedia-caseless-cwlm_lstm_crf.json",           
-            "WikipediaCased": "checkpoints/bi-lstm-crf-wikipedia-case-cwlm_lstm_crf.json"
+            "IIRUncased": "bilstm-checkpoints/bi-lstm-crf-iir-caseless-cwlm_lstm_crf.json",
+            "IIRCased": "bilstm-checkpoints/bi-lstm-crf-iir-case-cwlm_lstm_crf.json",
+            "Kp20kUnCased": "bilstm-checkpoints/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.json",
+            "Kp20kCased": "bilstm-checkpoints/bi-lstm-crf-kp20k-case-cwlm_lstm_crf.json",
+            "WikipediaUncased": "bilstm-checkpoints/bi-lstm-crf-wikipedia-caseless-cwlm_lstm_crf.json",           
+            "WikipediaCased": "bilstm-checkpoints/bi-lstm-crf-wikipedia-case-cwlm_lstm_crf.json"
         }
     },
     "NERModel":

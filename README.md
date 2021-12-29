@@ -29,7 +29,7 @@ Bi-LSTM-CRF architecture adaption for concept extraction
 
 <p align="center"><img width="70%" src="docs/bilstm_CE.png"/></p>
 
-- Pretrained BiLSTM-based models: Models (including ``*.model`` and ``*.json`` files) must be downloaded to a local directory to run a prediction script (e.g., /checkpoints/). Specify the directories to the downloaded models in the config files (files/config.json). (download all the models [[here]](https://sites.pitt.edu/~hkc6/bilstm-checkpoints.zip))
+- Pretrained BiLSTM-based models: Models (including ``*.model`` and ``*.json`` files) must be downloaded to a local directory to run a prediction script (e.g., /bilstm-checkpoints/). Specify the directories to the downloaded models in the config files (files/config.json). (download all the models [[here]](https://sites.pitt.edu/~hkc6/bilstm-checkpoints.zip))
     - Uncased model trained with IIR dataset: [model checkpoint](https://drive.google.com/file/d/1LqWLRNEN0lSalOEMBtcpWQvPyWvJocwJ/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1TSXMp4StGIR2zfKoh39Qu_dGyzOV-ecj/view?usp=sharing)
     - Cased model trained with IIR dataset: [model checkpoint](https://drive.google.com/file/d/1fqoROKiwNF-Oty0yNOv64qIRE4QC9XQR/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1NwQzQEKDtibmM6Pa-V22tu7jaj-GEY6k/view?usp=sharing)
     - Uncased model trained with KP20K dataset: [model checkpoint](https://drive.google.com/file/d/1wkEeDzCxvKlEdvkOZR3TtTL8j2ZZJtS6/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1bsWofpw9z27q57IefJricwefQ6ct6Kf_/view?usp=sharing)
