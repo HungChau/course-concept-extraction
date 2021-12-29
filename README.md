@@ -30,12 +30,14 @@ Bi-LSTM-CRF architecture adaption for concept extraction
 <p align="center"><img width="70%" src="docs/bilstm_CE.png"/></p>
 
 - Pretrained BiLSTM-based models: Models (including ``*.model`` and ``*.json`` files) must be downloaded to a local directory to run a prediction script (e.g., /checkpoints/). Specify the directories to the downloaded models in the config files (files/config.json).
-    - Uncased model trained with IIR dataset: 
-    - Cased model trained with IIR dataset: 
-    - Uncased model trained with KP20K dataset: 
-    - Cased model trained with KP20K dataset:
-    - Uncased model trained with Wikipedia dataset:
-    - Cased model trained with Wikipedia dataset:
+    - Uncased model trained with IIR dataset: [model checkpoint] and [model argument]
+    - Cased model trained with IIR dataset: [model checkpoint] and [model argument]
+    - Uncased model trained with KP20K dataset: [model checkpoint] and [model argument]
+    - Cased model trained with KP20K dataset: [model checkpoint] and [model argument]
+    - Uncased model trained with Wikipedia dataset: [model checkpoint] and [model argument]
+    - Cased model trained with Wikipedia dataset: [model checkpoint] and [model argument]
+
+BERT-based NER model (``dslim/bert-base-NER``): the extractor also uses a pretrained NER model to extract named entities. Specify the model name stored on Hugging Face in the config files (files/config.json). 
 
 ## Installation
 Install the following required libraries:
