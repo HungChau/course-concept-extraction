@@ -69,8 +69,11 @@ python predict_txt.py -h
 python predict.py --input_text "Machine learning is an important subject in Computer Science." --output_file outputs/output.txt
 ```
 The corresponding output follows the format: <list_of_concepts>
+```
+doc_id	['Computer Science', 'Machine learning']
+```
 
-- Input as a text file
+- Input as a text file (described in [Data](#data) section)
 ```predict_txt.py``` is provided to extract concepts from a text file (for multiple documents). A running command example is provided below:
 ```
 python predict_txt.py --input_file data/sample/input_sample.txt --output_file outputs/output.txt
@@ -78,4 +81,6 @@ python predict_txt.py --input_file data/sample/input_sample.txt --output_file ou
 
 The corresponding output follows the format: <doc_id><tab><list_of_concepts>
 ```
+000001	['data structures', 'queues', 'stacks', 'reference variables', 'trees', 'programming techniques', 'dynamic memory allocation', 'complexity', 'searching', 'recursion', 'java language', 'algorithms', 'computer science', 'sorting methods', 'lists']
+000002	['relational/SQL', 'data management', 'RDF/SPARQL', 'data stream processing approaches', 'data mining', 'data analysis topics', 'data management paradigms', 'data analysis techniques', 'XML/Xquery', 'information retrieval', 'big data processing techniques', 'map/reduce framework', 'NOSQL', 'data management techniques', 'data warehousing', 'class', 'data manipulation', 'network analysis']
 ```

@@ -1,4 +1,5 @@
 # Python Notebook files
 *.ipynb
+.DS_Store
 .ipynb_checkpoints/
 checkpoints/*
