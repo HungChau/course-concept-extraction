@@ -30,7 +30,7 @@ Bi-LSTM-CRF architecture adaption for concept extraction
 <p align="center"><img width="70%" src="docs/bilstm_CE.png"/></p>
 
 - Pretrained BiLSTM-based models: Models (including ``*.model`` and ``*.json`` files) must be downloaded to a local directory to run a prediction script (e.g., /checkpoints/). Specify the directories to the downloaded models in the config files (files/config.json).
-    - Uncased model trained with IIR dataset: [model checkpoint] and [model argument]
+    - Uncased model trained with IIR dataset: [model checkpoint](https://drive.google.com/file/d/1LqWLRNEN0lSalOEMBtcpWQvPyWvJocwJ/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1TSXMp4StGIR2zfKoh39Qu_dGyzOV-ecj/view?usp=sharing)
     - Cased model trained with IIR dataset: [model checkpoint] and [model argument]
     - Uncased model trained with KP20K dataset: [model checkpoint] and [model argument]
     - Cased model trained with KP20K dataset: [model checkpoint] and [model argument]
