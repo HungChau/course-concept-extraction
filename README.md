@@ -18,6 +18,12 @@ BERT architecture adaption for concept extraction
 
 - Pretrained BERT-based models stored on [Hugging Face account](https://huggingface.co/HungChau):
     - Uncased model trained with IIR dataset: HungChau/distilbert-base-uncased-concept-extraction-iir-v1.2
+    - Cased model trained with IIR dataset: HungChau/distilbert-base-cased-concept-extraction-iir-v1.2
+    - Uncased model trained with KP20K dataset: HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2
+    - Cased model trained with KP20K dataset: HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2
+    - Uncased model trained with Wikipedia dataset: HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2
+    - Cased model trained with Wikipedia dataset: HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2
+
 
 Bi-LSTM-CRF architecture adaption for concept extraction 
 
