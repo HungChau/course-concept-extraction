@@ -29,13 +29,13 @@ Bi-LSTM-CRF architecture adaption for concept extraction
 
 <p align="center"><img width="70%" src="docs/bilstm_CE.png"/></p>
 
-- Pretrained BiLSTM-based models: Models (including ``*.model`` and ``*.json`` files) must be downloaded to a local directory to run a prediction script (e.g., /checkpoints/). Specify the directories to the downloaded models in the config files (files/config.json).
+- Pretrained BiLSTM-based models: Models (including ``*.model`` and ``*.json`` files) must be downloaded to a local directory to run a prediction script (e.g., /checkpoints/). Specify the directories to the downloaded models in the config files (files/config.json). (download all the models [[here]](https://sites.pitt.edu/~hkc6/bilstm-checkpoints.zip))
     - Uncased model trained with IIR dataset: [model checkpoint](https://drive.google.com/file/d/1LqWLRNEN0lSalOEMBtcpWQvPyWvJocwJ/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1TSXMp4StGIR2zfKoh39Qu_dGyzOV-ecj/view?usp=sharing)
-    - Cased model trained with IIR dataset: [model checkpoint] and [model argument]
-    - Uncased model trained with KP20K dataset: [model checkpoint] and [model argument]
-    - Cased model trained with KP20K dataset: [model checkpoint] and [model argument]
-    - Uncased model trained with Wikipedia dataset: [model checkpoint] and [model argument]
-    - Cased model trained with Wikipedia dataset: [model checkpoint] and [model argument]
+    - Cased model trained with IIR dataset: [model checkpoint](https://drive.google.com/file/d/1fqoROKiwNF-Oty0yNOv64qIRE4QC9XQR/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1NwQzQEKDtibmM6Pa-V22tu7jaj-GEY6k/view?usp=sharing)
+    - Uncased model trained with KP20K dataset: [model checkpoint](https://drive.google.com/file/d/1wkEeDzCxvKlEdvkOZR3TtTL8j2ZZJtS6/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1bsWofpw9z27q57IefJricwefQ6ct6Kf_/view?usp=sharing)
+    - Cased model trained with KP20K dataset: [model checkpoint](https://drive.google.com/file/d/1YtTdbEc4TpKv6eHF8Ic4x_jp2mMdsDYn/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1JsLt-4VJLJsxYd1gMKKG-PWF3vp320_s/view?usp=sharing)
+    - Uncased model trained with Wikipedia dataset: [model checkpoint](https://drive.google.com/file/d/1_bZyqd_Dvihrhn-s0KiwbCgOyDOMaczZ/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1xUO-G2fzsbfUIK1qD1g8-S0q8rD4LiJb/view?usp=sharing)
+    - Cased model trained with Wikipedia dataset: [model checkpoint](https://drive.google.com/file/d/1wQ9DBrZoaS6TXFLlIVfJBxzVs8IKulCf/view?usp=sharing) and [model argument](https://drive.google.com/file/d/1Iv0zdtWOS963_bvpuh08VSPrizWBht6G/view?usp=sharing)
 
 BERT-based NER model: the extractor also uses a pretrained NER model to extract named entities. Specify the model name  (e.g., ``dslim/bert-base-NER``) on Hugging Face in the config files (files/config.json). 
 
