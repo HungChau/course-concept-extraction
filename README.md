@@ -1,6 +1,6 @@
 # Concept Extraction for Course Description
 
-This project provides a concept extractor for course descriptions taught in college. The current trained models mainly focus on courses in computer science and information science domains. The extraction models were trained with weak labels from public resources such as IIR dataset, KP20 dataset or Wikipedia.
+This project provides a concept extractor for college course descriptions. The current models mainly focus on courses in computer science and information science domains. The extraction models were trained with weak labels from public resources such as [[IIR dataset]](https://github.com/PAWSLabUniversityOfPittsburgh/Concept-Extraction/tree/master/IIR-dataset), KP20 dataset or Wikipedia. The extractor is the combination of different pretrained BERT-based and BiLSTM-based cased/uncased models on different datasets.
 
 ## Quick Links
 
