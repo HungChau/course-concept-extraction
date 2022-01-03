@@ -43,7 +43,7 @@ BERT-based NER model: the extractor also uses a pretrained NER model to extract 
 Install the following required libraries:
 - spaCy and NLTK
 - scikit-learn
-- PyTorch
+- PyTorch ([guide](https://pytorch.org/get-started/locally/))
 - transformers ([guide](https://huggingface.co/docs/transformers/installation))
 - datasets  ([guide](https://huggingface.co/docs/datasets/installation.html))
 
