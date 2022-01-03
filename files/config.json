@@ -20,7 +20,7 @@
         {
             "IIRUncased": "bilstm-checkpoints/bi-lstm-crf-iir-caseless-cwlm_lstm_crf.model",
             "IIRCased": "bilstm-checkpoints/bi-lstm-crf-iir-case-cwlm_lstm_crf.model",
-            "Kp20kUnCased": "checkbilstm-checkpointspoints/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.model",
+            "Kp20kUnCased": "bilstm-checkpoints/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.model",
             "Kp20kCased": "bilstm-checkpoints/bi-lstm-crf-kp20k-case-cwlm_lstm_crf.model",
             "WikipediaUncased": "bilstm-checkpoints/bi-lstm-crf-wikipedia-caseless-cwlm_lstm_crf.model",             
             "WikipediaCased": "bilstm-checkpoints/bi-lstm-crf-wikipedia-case-cwlm_lstm_crf.model"
