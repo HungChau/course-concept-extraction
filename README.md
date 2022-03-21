@@ -1,6 +1,6 @@
 # Concept Extraction for Course Description
 
-This project provides a concept extractor for college course descriptions. The current models mainly focus on courses in computer science and information science domains. The extraction models were trained with weak labels from public resources such as [IIR dataset](https://github.com/PAWSLabUniversityOfPittsburgh/Concept-Extraction/tree/master/IIR-dataset), [KP20 dataset](https://github.com/memray/seq2seq-keyphrase) or Wikipedia pages. The extractor is the combination of different pretrained BERT-based and BiLSTM-based cased/uncased models on different datasets.
+This project provides a concept extractor for college course descriptions. The extraction models were trained with weak labels from public resources such as [IIR dataset](https://github.com/PAWSLabUniversityOfPittsburgh/Concept-Extraction/tree/master/IIR-dataset), [KP20 dataset](https://github.com/memray/seq2seq-keyphrase) and Wikipedia pages. The extractor is the combination of different pretrained BERT-based and BiLSTM-based cased/uncased models on different datasets.
 
 ## Quick Links
 
@@ -21,8 +21,10 @@ BERT architecture adaption for concept extraction
     - Cased model trained with IIR dataset: ``HungChau/distilbert-base-cased-concept-extraction-iir-v1.2``
     - Uncased model trained with KP20K dataset: ``HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2``
     - Cased model trained with KP20K dataset: ``HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2``
-    - Uncased model trained with Wikipedia dataset: ``HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2``
-    - Cased model trained with Wikipedia dataset: ``HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2``
+    - Uncased model trained with Wikipedia dataset focusing CS-related domains: ``HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2``
+    - Cased model trained with Wikipedia dataset focusing CS-related domains: ``HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2``
+    - Uncased model trained with ALL Wikipedia dataset: ``HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-allwikipedia-v1.0``
+    - Cased model trained with ALL Wikipedia dataset: ``HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-allwikipedia-v1.0``
 
 
 Bi-LSTM-CRF architecture adaption for concept extraction 
