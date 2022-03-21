@@ -39,6 +39,7 @@ if __name__ == "__main__":
     MODEL_NAME_CASED = [v for k, v in data['BertModel']['Cased'].items()]
 
     label_list = ['B-KEY', 'I-KEY', 'O'] ## Keep the same item orders as when training models
+    label_list_ds = ['O', 'B-KEY', 'I-KEY'] ## the order of label list when training models with datasets to process data
 
     logging.set_verbosity_error()
 
@@ -111,17 +112,24 @@ if __name__ == "__main__":
             outputs = model_list_uncased[m_idx](inputs)[0]
             predictions = torch.argmax(outputs, dim=2)
 
-            true_predictions = [label_list[p] for p in predictions[0][1:-1]]
-            true_predictions_list.append(true_predictions)
+            if MODEL_NAME_UNCASED[m_idx].find('allwikipedia')>-1:
+                true_predictions = [label_list_ds[p] for p in predictions[0][1:-1]]
+                true_predictions_list.append(true_predictions)
+            else:
+                true_predictions = [label_list[p] for p in predictions[0][1:-1]]
+                true_predictions_list.append(true_predictions)
 
         true_predictions_combined = true_predictions_list[0]
         for i in range(1, len(true_predictions_list)):
             true_predictions_combined = utils_bert.combine_predicted_lists(true_predictions_combined, true_predictions_list[i])
 
         true_predictions_combined = utils_bert.refine_prediction(true_predictions_combined)
-        index_predictions = [2] + [label_list.index(p) for p in true_predictions_combined] + [2]
-
-        token_label = [(token, offset, label_list[prediction]) for token, offset, prediction in zip(tokens, offset_mapping, index_predictions)]
+        if MODEL_NAME[m_idx].find('allwikipedia')>-1:
+            index_predictions = [2] + [label_list_ds.index(p) for p in true_predictions_combined] + [2]
+            token_label = [(token, offset, label_list_ds[prediction]) for token, offset, prediction in zip(tokens, offset_mapping, index_predictions)]
+        else:
+            index_predictions = [2] + [label_list.index(p) for p in true_predictions_combined] + [2]
+            token_label = [(token, offset, label_list[prediction]) for token, offset, prediction in zip(tokens, offset_mapping, index_predictions)]
         concepts_uncased = concepts_uncased + utils_bert.extraction_concepts_from_token_label(sub_str, idx_str, token_label) 
 
         ## Predicting with BERT CASED models
@@ -136,17 +144,24 @@ if __name__ == "__main__":
             outputs = model_list_cased[m_idx](inputs)[0]
             predictions = torch.argmax(outputs, dim=2)
 
-            true_predictions = [label_list[p] for p in predictions[0][1:-1]]
-            true_predictions_list.append(true_predictions)
-
+            if MODEL_NAME_CASED[m_idx].find('allwikipedia')>-1:
+                true_predictions = [label_list_ds[p] for p in predictions[0][1:-1]]
+                true_predictions_list.append(true_predictions)
+            else:
+                true_predictions = [label_list[p] for p in predictions[0][1:-1]]
+                true_predictions_list.append(true_predictions)
+                        
         true_predictions_combined = true_predictions_list[0]
         for i in range(1, len(true_predictions_list)):
             true_predictions_combined = utils_bert.combine_predicted_lists(true_predictions_combined, true_predictions_list[i])
 
         true_predictions_combined = utils_bert.refine_prediction(true_predictions_combined)
-        index_predictions = [2] + [label_list.index(p) for p in true_predictions_combined] + [2]
-
-        token_label = [(token, offset, label_list[prediction]) for token, offset, prediction in zip(tokens, offset_mapping, index_predictions)]
+        if MODEL_NAME[m_idx].find('allwikipedia')>-1:
+            index_predictions = [2] + [label_list_ds.index(p) for p in true_predictions_combined] + [2]       
+            token_label = [(token, offset, label_list_ds[prediction]) for token, offset, prediction in zip(tokens, offset_mapping, index_predictions)]
+        else:
+            index_predictions = [2] + [label_list.index(p) for p in true_predictions_combined] + [2]       
+            token_label = [(token, offset, label_list[prediction]) for token, offset, prediction in zip(tokens, offset_mapping, index_predictions)]
         concepts_cased = concepts_cased + utils_bert.extraction_concepts_from_token_label(sub_str, idx_str, token_label) 
 
         ## Predicting with BILSTM models
