@@ -95,4 +95,11 @@ The corresponding output follows the format: <doc_id>\<tab>\<list_of_concepts>
 ## Concept Ranking
 If you want to use the ranking functionarity, you need to install ``sentence-transformers``: ```pip install -U sentence-transformers``` ([guide](https://www.sbert.net/))
 
-The model ranks concepts based on how relevant they are to the input text using Sentence Bert embeddings. Us
+The model ranks concepts based on how relevant they are to the input text using Sentence Bert embeddings. A running command example is provided below:
+```
+python predict.py --input_text "Machine learning is an important subject in Computer Science." --output_file outputs/output.txt --ranking
+```
+The corresponding output follows the format: "doc_id"\<tab>\<list_of_ranked_concepts>
+```
+doc_id	[('Machine learning', 0.7), ('Computer Science', 0.6)]
+```
