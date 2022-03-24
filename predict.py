@@ -25,6 +25,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Using the trained models to extract concepts from an input text as a string')
     parser.add_argument('--input_text', default='Machine learning is an important subject in Computer Science.', help='input text from which the model extracts concepts (string)')
     parser.add_argument('--output_file', default='./outputs/output.txt', help='path to output txt file')
+    parser.add_argument('--ranking', action='store_true', help='rank concepts based on how relevant to the document.')
     args = parser.parse_args()
 
     
@@ -79,6 +80,8 @@ if __name__ == "__main__":
 
     ### Extract Concepts
     _text = args.input_text
+    _id_text = dict()
+    _id_text['doc_id'] = _text
     print('Input text:')
     print(_text)
     print()
@@ -209,6 +212,24 @@ if __name__ == "__main__":
     
     # Filtering the results (only for concepts, not concepts with positions for now)
     utils_bert.filtering_title_concepts(output_id_concept_only)
+    
+    # Rank concepts based on how relevant they are to the text
+    if args.ranking==True:
+        print('Concept ranking...')
+        from sentence_transformers import SentenceTransformer
+        model = SentenceTransformer('all-mpnet-base-v2')
+        for _id, _text in _id_text.items():
+            desc_embs = model.encode(_text)
+            concepts = output_id_concept_only[_id]
+            con_embs = model.encode(concepts)
+            _dist = np.dot(desc_embs, con_embs.T)
+
+            concept_with_rank = []
+            sorted_idx = sorted(range(len(_dist)), key=lambda k:  _dist[k], reverse=True)
+            for _idx in sorted_idx:
+                concept_with_rank.append((concepts[_idx], _dist[_idx]))
+
+            output_id_concept_only[_id] = concept_with_rank
     
     # Save the result to file
     with open(args.output_file, 'w') as fw:
