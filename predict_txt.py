@@ -25,6 +25,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Using the trained models to extract concepts from an input text as a string')
     parser.add_argument('--input_file', default='./data/sample/input_sample.txt', help='path to input txt file')
     parser.add_argument('--output_file', default='./outputs/output.txt', help='path to output txt file')
+    parser.add_argument('--ranking', action='store_true', help='rank concepts based on how relevant to the document.')
     args = parser.parse_args()
 
     print('Loading the model...')
@@ -80,9 +81,11 @@ if __name__ == "__main__":
     print('Extracting concepts...')
     output_id_concept_combined = {}
 
+    _id_text = dict()
     with open(args.input_file, 'r') as fr:
         for line in fr:
             _id, _text = line.split('\t')
+            _id_text[_id] = _text
 
             concepts_uncased = []
             concepts_cased = []
@@ -211,6 +214,24 @@ if __name__ == "__main__":
     # Filtering the results (only for concepts, not concepts with positions for now)
     utils_bert.filtering_title_concepts(output_id_concept_only)
     
+    # Rank concepts based on how relevant they are to the text
+    if args.ranking==True:
+        print('Concept ranking...')
+        from sentence_transformers import SentenceTransformer
+        model = SentenceTransformer('all-mpnet-base-v2')
+        for _id, _text in _id_text.items():
+            desc_embs = model.encode(_text)
+            concepts = output_id_concept_only[_id]
+            con_embs = model.encode(concepts)
+            _dist = np.dot(desc_embs, con_embs.T)
+
+            concept_with_rank = []
+            sorted_idx = sorted(range(len(_dist)), key=lambda k:  _dist[k], reverse=True)
+            for _idx in sorted_idx:
+                concept_with_rank.append((concepts[_idx], _dist[_idx]))
+
+            output_id_concept_only[_id] = concept_with_rank
+            
     # Save the result to file
     with open(args.output_file, 'w') as fr:
         for k, v in output_id_concept_only.items():
