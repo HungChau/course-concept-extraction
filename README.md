@@ -91,3 +91,8 @@ The corresponding output follows the format: <doc_id>\<tab>\<list_of_concepts>
 000001	['data structures', 'queues', 'stacks', 'reference variables', 'trees', 'programming techniques', 'dynamic memory allocation', 'complexity', 'searching', 'recursion', 'java language', 'algorithms', 'computer science', 'sorting methods', 'lists']
 000002	['relational/SQL', 'data management', 'RDF/SPARQL', 'data stream processing approaches', 'data mining', 'data analysis topics', 'data management paradigms', 'data analysis techniques', 'XML/Xquery', 'information retrieval', 'big data processing techniques', 'map/reduce framework', 'NOSQL', 'data management techniques', 'data warehousing', 'class', 'data manipulation', 'network analysis']
 ```
+
+## Concept Ranking
+If you want to use the ranking functionarity, you need to install ``sentence-transformers``: ```pip install -U sentence-transformers``` ([guide](https://www.sbert.net/))
+
+The model ranks concepts based on how relevant they are to the input text using Sentence Bert embeddings. Us
