@@ -93,7 +93,7 @@ The corresponding output follows the format: <doc_id>\<tab>\<list_of_concepts>
 ```
 
 ## Concept Ranking
-If you want to use the ranking functionality, you need to install ``sentence-transformers``: ```pip install -U sentence-transformers``` ([guide](https://www.sbert.net/))
+If you want to use the ranking functionality, you need to install ``sentence-transformers`` library: ```pip install -U sentence-transformers``` ([guide](https://www.sbert.net/))
 
 The model ranks concepts based on how relevant they are to the input text using Sentence Bert embeddings. A running command example is provided below:
 ```
