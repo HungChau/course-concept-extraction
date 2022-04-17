@@ -26,6 +26,7 @@ if __name__ == "__main__":
     parser.add_argument('--input_text', default='Machine learning is an important subject in Computer Science.', help='input text from which the model extracts concepts (string)')
     parser.add_argument('--output_file', default='./outputs/output.txt', help='path to output txt file')
     parser.add_argument('--ranking', action='store_true', help='rank concepts based on how relevant to the document.')
+    parser.add_argument('--threshold', default=0.0, help='Cut off concepts that are smaller than the distance threshold.')
     args = parser.parse_args()
 
     
@@ -227,7 +228,8 @@ if __name__ == "__main__":
             concept_with_rank = []
             sorted_idx = sorted(range(len(_dist)), key=lambda k:  _dist[k], reverse=True)
             for _idx in sorted_idx:
-                concept_with_rank.append((concepts[_idx], _dist[_idx]))
+                if _dist[_idx] >= float(args.threshold):
+                    concept_with_rank.append((concepts[_idx], _dist[_idx]))
 
             output_id_concept_only[_id] = concept_with_rank
     
