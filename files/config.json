@@ -5,13 +5,15 @@
         {
             "IIR": "HungChau/distilbert-base-uncased-concept-extraction-iir-v1.2",
             "Kp20k": "HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2",
-            "Wikipedia": "HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2"
+            "Wikipedia": "HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2",
+            "AllWikipedia":"HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-allwikipedia-v1.0"
         },
         "Cased":
         {
             "IIR": "HungChau/distilbert-base-cased-concept-extraction-iir-v1.2",
             "Kp20k": "HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2",
-            "Wikipedia": "HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2"
+            "Wikipedia": "HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2",
+            "AllWikipedia":"HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-allwikipedia-v1.0"
         }
     },
     "BiLSTMModel":
@@ -20,7 +22,7 @@
         {
             "IIRUncased": "bilstm-checkpoints/bi-lstm-crf-iir-caseless-cwlm_lstm_crf.model",
             "IIRCased": "bilstm-checkpoints/bi-lstm-crf-iir-case-cwlm_lstm_crf.model",
-            "Kp20kUnCased": "checkbilstm-checkpointspoints/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.model",
+            "Kp20kUnCased": "bilstm-checkpoints/bi-lstm-crf-kp20k-caseless-cwlm_lstm_crf.model",
             "Kp20kCased": "bilstm-checkpoints/bi-lstm-crf-kp20k-case-cwlm_lstm_crf.model",
             "WikipediaUncased": "bilstm-checkpoints/bi-lstm-crf-wikipedia-caseless-cwlm_lstm_crf.model",             
             "WikipediaCased": "bilstm-checkpoints/bi-lstm-crf-wikipedia-case-cwlm_lstm_crf.model"

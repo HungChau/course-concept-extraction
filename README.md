@@ -1,6 +1,6 @@
 # Concept Extraction for Course Description (V1.0)
 
-This project provides a concept extractor for college course descriptions. The current models mainly focus on courses in computer science and information science domains. The extraction models were trained with weak labels from public resources such as [IIR dataset](https://github.com/PAWSLabUniversityOfPittsburgh/Concept-Extraction/tree/master/IIR-dataset), [KP20 dataset](https://github.com/memray/seq2seq-keyphrase) or Wikipedia pages. The extractor is the combination of different pretrained BERT-based and BiLSTM-based cased/uncased models on different datasets.
+This project provides a concept extractor for college course descriptions. The extraction models were trained with weak labels from public resources such as [IIR dataset](https://github.com/PAWSLabUniversityOfPittsburgh/Concept-Extraction/tree/master/IIR-dataset), [KP20 dataset](https://github.com/memray/seq2seq-keyphrase) and Wikipedia pages. The extractor is the combination of different pretrained BERT-based and BiLSTM-based cased/uncased models on different datasets.
 
 ## Quick Links
 
@@ -16,13 +16,15 @@ BERT architecture adaption for concept extraction
 
 <p align="center"><img width="50%" src="docs/bert_CE.png"/></p>
 
-- Pretrained BERT-based models stored on [Hugging Face account](https://huggingface.co/HungChau): specify the models you want to use in the config file (files/config.json). When running a prediction script for the first time, it will automatically download to your local machine.
+- Pretrained BERT-based models stored on [Hugging Face account](https://huggingface.co/HungChau): specify the models you want to use in the config file (files/config.json). When running a prediction script for the first time, it will automatically download to your local machine (it will take some time to download the models).
     - Uncased model trained with IIR dataset: ``HungChau/distilbert-base-uncased-concept-extraction-iir-v1.2``
     - Cased model trained with IIR dataset: ``HungChau/distilbert-base-cased-concept-extraction-iir-v1.2``
     - Uncased model trained with KP20K dataset: ``HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2``
     - Cased model trained with KP20K dataset: ``HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2``
-    - Uncased model trained with Wikipedia dataset: ``HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2``
-    - Cased model trained with Wikipedia dataset: ``HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2``
+    - Uncased model trained with Wikipedia dataset focusing CS-related domains: ``HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2``
+    - Cased model trained with Wikipedia dataset focusing CS-related domains: ``HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-wikipedia-v1.2``
+    - Uncased model trained with ALL Wikipedia dataset: ``HungChau/distilbert-base-uncased-concept-extraction-kp20k-v1.2-concept-extraction-allwikipedia-v1.0``
+    - Cased model trained with ALL Wikipedia dataset: ``HungChau/distilbert-base-cased-concept-extraction-kp20k-v1.2-concept-extraction-allwikipedia-v1.0``
 
 
 Bi-LSTM-CRF architecture adaption for concept extraction 
@@ -43,8 +45,9 @@ BERT-based NER model: the extractor also uses a pretrained NER model to extract 
 Install the following required libraries:
 - spaCy and NLTK
 - scikit-learn
-- PyTorch
-- transformers
+- PyTorch ([guide](https://pytorch.org/get-started/locally/))
+- transformers ([guide](https://huggingface.co/docs/transformers/installation))
+- datasets  ([guide](https://huggingface.co/docs/datasets/installation.html))
 
 ## Data
 The input text file follows the format: <doc_id>\<tab>\<text>
@@ -87,4 +90,16 @@ The corresponding output follows the format: <doc_id>\<tab>\<list_of_concepts>
 ```
 000001	['data structures', 'queues', 'stacks', 'reference variables', 'trees', 'programming techniques', 'dynamic memory allocation', 'complexity', 'searching', 'recursion', 'java language', 'algorithms', 'computer science', 'sorting methods', 'lists']
 000002	['relational/SQL', 'data management', 'RDF/SPARQL', 'data stream processing approaches', 'data mining', 'data analysis topics', 'data management paradigms', 'data analysis techniques', 'XML/Xquery', 'information retrieval', 'big data processing techniques', 'map/reduce framework', 'NOSQL', 'data management techniques', 'data warehousing', 'class', 'data manipulation', 'network analysis']
+```
+
+## Concept Ranking
+If you want to use the ranking functionality, you need to install ``sentence-transformers`` library: ```pip install -U sentence-transformers``` ([guide](https://www.sbert.net/))
+
+The model ranks concepts based on how relevant they are to the input text using Sentence Bert embeddings. A running command example is provided below:
+```
+python predict.py --input_text "Machine learning is an important subject in Computer Science." --output_file outputs/output.txt --ranking
+```
+The corresponding output follows the format: "doc_id"\<tab>\<list_of_ranked_concepts>
+```
+doc_id	[('Machine learning', 0.7), ('Computer Science', 0.6)]
 ```

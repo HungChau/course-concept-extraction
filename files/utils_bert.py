@@ -542,13 +542,18 @@ def resolve_overlapping(l):
     cur_item = l[0]
     for i in range(1, len(l)):
         new_item = l[i]
-        if cur_item[1][0] == new_item[1][0] and cur_item[1][1] < new_item[1][1]:
+        if cur_item[1][0] == new_item[1][0] and cur_item[1][1] < new_item[1][1]: #('complexity-theoretic foundations', (360, 392)), ('theoretic', (371, 380))
             cur_item = new_item
         else:
             if cur_item[1][1] < new_item[1][1]:
-                new_l.append(cur_item)
-                cur_item = new_item
-    
+                if (cur_item[1][1] + 1) < new_item[1][0]: #('secure communication', (171, 191)), ('digital signature', (193, 210))
+                    new_l.append(cur_item)
+                    cur_item = new_item
+                elif (cur_item[1][1] + 1) == new_item[1][0]: # ('analysis of', (170, 181)), ('experiments', (182, 193))
+                    cur_item = (cur_item[0] + ' ' + new_item[0], (cur_item[1][0], new_item[1][1]))
+                else: #('firm complexity-theoretic', (355, 380)), ('complexity-theoretic foundations', (360, 392))
+                    cur_item = (cur_item[0] + new_item[0][(cur_item[1][1]-new_item[1][1]):], (cur_item[1][0], new_item[1][1]))
+                    
     new_l.append(cur_item)
     
     return new_l
@@ -583,37 +588,39 @@ def filtering_title_concepts(_output_id_concept):
     common_phrases = ["classrooms", "classroom", "faculty", "student", "students", "lab", "labs", "topic", "topics", "semester", "semesters", "instructor", "instructors", "lecture", "lectures"]
     
     # merging the 3 lists
-    lower_case = articles + conjunctions + prepositions + common_phrases
+    lower_case = articles + conjunctions + prepositions
             
     for k, v in _output_id_concept.items():
         new_concept_list = []
         for c in v:
-            # variable declaration for the output text 
-            output_string = ""
+#             print(c.lowe)
+            if c.lower() not in common_phrases:
+                # variable declaration for the output text 
+                output_string = ""
 
-            # separating each word in the string
-            if type(c)==str:
-                input_list = c.split(" ")
-            else: ## NOT PROCESS THE CONCEPTS WITH POSITIONS FOR NOW. WHEN DOING IT, NEED TO UPDATE THE POSITIONS AS WELL
-                input_list = c[0].split(" ")
-                
-            # checking each word
-            for idx, word in enumerate(input_list):
+                # separating each word in the string
+                if type(c)==str:
+                    input_list = c.split(" ")
+                else: ## NOT PROCESS THE CONCEPTS WITH POSITIONS FOR NOW. WHEN DOING IT, NEED TO UPDATE THE POSITIONS AS WELL
+                    input_list = c[0].split(" ")
 
-                # if the word exists in the list
-                # then no need to capitalize it
-                if word in lower_case:
-                    if idx != 0 and idx != len(input_list):
-#                     print(word)
-                        output_string += word.lower() + " "
+                # checking each word
+                for idx, word in enumerate(input_list):
 
-                # if the word does not exists in
-                # the list, then capitalize it
-                else:
-                    output_string += word + " "
-                    
-            if len(output_string) > 1:
-                new_concept_list.append(output_string[:-1])
+                    # if the word exists in the list
+                    # then no need to capitalize it
+                    if word.lower() in lower_case:
+                        if idx != 0 and idx != (len(input_list)-1):
+    #                     print(word)
+                            output_string += word.lower() + " "
+
+                    # if the word does not exists in
+                    # the list, then capitalize it
+                    else:
+                        output_string += word + " "
+
+                if len(output_string) > 1:
+                    new_concept_list.append(output_string[:-1])
         _output_id_concept[k] =  new_concept_list
     return _output_id_concept
 
